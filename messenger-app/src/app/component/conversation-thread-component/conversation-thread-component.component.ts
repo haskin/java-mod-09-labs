@@ -10,7 +10,7 @@ export class ConversationThreadComponentComponent implements OnInit {
 
   senderMessages: Message[] = [
     {
-      sender: { firstName: "Ludovic", isOnline: false },
+      sender: { firstName: "Ludovic", isOnline: true },
       text: "Message from Ludovic",
       conversationId: 1,
       sequenceNumber: 0,
@@ -23,7 +23,7 @@ export class ConversationThreadComponentComponent implements OnInit {
     },
   ];
 
-  userMessages: Message[]= [
+  userMessages: Message[] = [
     {
       sender: { firstName: "Aurelie" },
       text: "Message from Aurelie",
