@@ -4,7 +4,7 @@
       <span class="badge"
         [ngClass]="message.sender.isOnline ? 'bg-primary' : 'bg-secondary'">{{message.sender.firstName[0]}}</span>
     </div>
-    <div class="col-8 p-3 border rounded-5">
+    <div class="col-8 p-3 border rounded-5" [ngClass]="message.sender.isOnline ? 'fw-bold' : 'fw-light'">
       <span>{{message.text}}</span>
     </div>
   </div>
