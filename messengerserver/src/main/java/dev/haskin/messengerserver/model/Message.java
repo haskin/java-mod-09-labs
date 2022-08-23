@@ -1,16 +1,20 @@
 package dev.haskin.messengerserver.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Message {
     private Sender sender;
-    private String test;
-    private Long conversationId;
+    private String text;
+    private Integer conversationId;
     private Integer sequenceNumber;
 }
 
