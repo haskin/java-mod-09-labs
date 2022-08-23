@@ -18,13 +18,13 @@ public class MessageController {
     private MessageService messageService;
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping(value = "/get-user-message")
+    @GetMapping(value = "/get-user-messages")
     List<Message> getUserMessage() {
         return messageService.getUserMessages();
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping(value = "/get-sender-message")
+    @GetMapping(value = "/get-sender-messages")
     List<Message> getSenderMessage() {
         return messageService.getSenderMessages();
     }
