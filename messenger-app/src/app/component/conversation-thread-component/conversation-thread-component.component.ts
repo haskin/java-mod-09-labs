@@ -22,6 +22,12 @@ export class ConversationThreadComponentComponent implements OnInit {
         this.userMessages = messages;
       }
     );
+    this.messagingService.senderMessagesChanged.subscribe(
+      (messages: Message[]) => {
+        console.log('********** sender messages have changed');
+        this.senderMessages = messages;
+      }
+    );
   }
   //   {
   //     sender: { firstName: "Ludovic", isOnline: true },
