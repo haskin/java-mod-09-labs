@@ -12,6 +12,7 @@ import { UserMessageComponentComponent } from './component/user-message-componen
 import { ContactComponentComponent } from './component/contact-component/contact-component.component';
 import { HeaderComponentComponent } from './component/header-component/header-component.component';
 import { MessageCountComponentComponent } from './component/message-count-component/message-count-component.component';
+import { MessagingDataService } from './service/messaging-data.service';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,10 @@ import { MessageCountComponentComponent } from './component/message-count-compon
     UserMessageComponentComponent,
     ContactComponentComponent,
     HeaderComponentComponent,
-    MessageCountComponentComponent
+    MessageCountComponentComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule],
+  providers: [MessagingDataService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
