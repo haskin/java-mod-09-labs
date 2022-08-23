@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MessagingDataService } from 'src/app/service/messaging-data.service';
-import Message from 'src/app/model/Message';
 
 @Component({
   selector: 'app-message-count-component',
