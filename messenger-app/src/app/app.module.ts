@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ConversationHistoryComponentComponent } from './component/conversation-history-component/conversation-history-component.component';
@@ -13,7 +14,6 @@ import { ContactComponentComponent } from './component/contact-component/contact
 import { HeaderComponentComponent } from './component/header-component/header-component.component';
 import { MessageCountComponentComponent } from './component/message-count-component/message-count-component.component';
 import { MessagingDataService } from './service/messaging-data.service';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,7 @@ import { MessagingDataService } from './service/messaging-data.service';
     HeaderComponentComponent,
     MessageCountComponentComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, HttpClientModule],
   providers: [MessagingDataService],
   bootstrap: [AppComponent],
 })

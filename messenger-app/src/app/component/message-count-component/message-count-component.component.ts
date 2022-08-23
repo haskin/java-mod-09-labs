@@ -15,10 +15,6 @@ export class MessageCountComponentComponent implements OnInit {
   constructor(private messageService: MessagingDataService) {}
 
   ngOnInit(): void {
-    this.userMessageCount = this.messageService.getUserMessages().length;
-    this.senderMessageCount = this.messageService.getSenderMessages().length;
-    this.sentMessageCount = this.userMessageCount + this.senderMessageCount;
-
     this.messageService.userMessagesChanged.subscribe((messages) => {
       this.sentMessageCount -= this.userMessageCount;
       this.sentMessageCount += messages.length;
