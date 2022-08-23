@@ -28,6 +28,7 @@ export class MessagingDataService {
   ];
 
   userMessagesChanged = new EventEmitter<Message[]>();
+  senderMessagesChanged = new EventEmitter<Message[]>();
 
   getSenderMessages() {
     return this.senderMessages.slice();
@@ -35,6 +36,11 @@ export class MessagingDataService {
 
   getUserMessages() {
     return this.userMessages.slice();
+  }
+
+  addSenderMessage(newMessage: Message) {
+    this.senderMessages.push(newMessage);
+    this.senderMessagesChanged.emit(this.senderMessages.slice());
   }
 
   addUserMessage(newMessage: Message) {
