@@ -1,4 +1,4 @@
-package dev.haskin.messengerserver.component;
+package dev.haskin.messengerserver.controller;
 
 import java.util.List;
 
