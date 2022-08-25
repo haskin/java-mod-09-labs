@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,13 +20,19 @@ public class MessageController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value = "/get-user-messages")
-    List<Message> getUserMessage() {
+    public List<Message> getUserMessage() {
         return messageService.getUserMessages();
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value = "/get-sender-messages")
-    List<Message> getSenderMessage() {
+    public List<Message> getSenderMessage() {
         return messageService.getSenderMessages();
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping(value = "/delete-message")
+    public void deleteMessage(Message message) {
+        return;
     }
 }
