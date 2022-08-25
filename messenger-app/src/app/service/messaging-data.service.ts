@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import Message from '../model/Message';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class MessagingDataService {
@@ -25,6 +25,30 @@ export class MessagingDataService {
     this.httpClient
       .get<Message[]>('http://localhost:8080/api/get-user-messages')
       .subscribe((messages: Message[]) => {
+        console.log(messages);
+        this.userMessages = messages;
+        this.userMessagesChanged.emit(this.userMessages);
+      });
+    return this.userMessages.slice();
+  }
+
+  deleteUserMessage(message: Message) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+    });
+
+    console.log(JSON.stringify(message));
+    const options = {
+      headers: headers,
+      body: JSON.stringify(message),
+    };
+
+    this.httpClient
+      .delete<Message[]>(
+        'http://localhost:8080/api/delete-user-message',
+        options
+      )
+      .subscribe((messages) => {
         console.log(messages);
         this.userMessages = messages;
         this.userMessagesChanged.emit(this.userMessages);

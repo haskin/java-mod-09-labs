@@ -1,9 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col-2 p-3 ml-0"><span class="badge"
-      [ngClass]="message.sender.isOnline ? 'bg-primary' : 'bg-secondary'">{{message.sender.firstName[0]}}</span></div>
-    <div class="col-10 p-3 pl-0 border rounded-5"[ngClass]="message.sender.isOnline ? 'fw-bold' : 'fw-light'">
-      <span>{{message.text}}</span>
+    <button class="col-2 p-1 btn btn-danger" (click)="deleteMessage()">
+      Delete
+    </button>
+    <div class="col-2 p-3 ml-0">
+      <span
+        class="badge"
+        [ngClass]="message.sender.isOnline ? 'bg-primary' : 'bg-secondary'"
+        >{{ message.sender.firstName[0] }}</span
+      >
+    </div>
+    <div
+      class="col-8 p-3 pl-0 border rounded-5"
+      [ngClass]="message.sender.isOnline ? 'fw-bold' : 'fw-light'"
+    >
+      <span>{{ message.text }}</span>
     </div>
   </div>
 </div>

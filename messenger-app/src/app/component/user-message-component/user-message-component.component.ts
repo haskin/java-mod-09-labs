@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import Message from 'src/app/model/Message';
+import { MessagingDataService } from 'src/app/service/messaging-data.service';
 
 @Component({
   selector: 'app-user-message-component',
@@ -14,7 +15,12 @@ export class UserMessageComponentComponent implements OnInit {
     conversationId: 1,
     sequenceNumber: 0,
   };
-  constructor() {}
+  constructor(private messagingDataService: MessagingDataService) {}
 
   ngOnInit(): void {}
+
+  deleteMessage() {
+    // console.log(this.message);
+    this.messagingDataService.deleteUserMessage(this.message);
+  }
 }
